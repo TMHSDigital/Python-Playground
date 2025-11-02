@@ -22,6 +22,26 @@
     --shadow-lg: rgba(0, 0, 0, 0.8);
     --glow: rgba(88, 166, 255, 0.4);
     --glow-strong: rgba(88, 166, 255, 0.6);
+    
+    /* Spacing scale */
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+    
+    /* Typography scale */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 2rem;
+    --text-4xl: 2.5rem;
+    --text-5xl: 3rem;
 }
 
 * {
@@ -45,12 +65,13 @@ body {
     flex-direction: column;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-size: var(--text-base);
 }
 
 .container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 32px;
+    padding: 0 var(--space-xl);
     width: 100%;
 }
 
@@ -58,8 +79,8 @@ header {
     background: linear-gradient(180deg, rgba(20, 27, 35, 0.95) 0%, rgba(10, 14, 19, 0.98) 100%);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-light);
-    padding: 3.5rem 0 2.5rem;
-    margin-bottom: 2.5rem;
+    padding: var(--space-3xl) 0 var(--space-2xl);
+    margin-bottom: var(--space-2xl);
     position: relative;
     overflow: hidden;
 }
@@ -75,21 +96,15 @@ header::before {
     opacity: 0.6;
 }
 
-header::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 50% 0%, rgba(88, 166, 255, 0.05) 0%, transparent 70%);
-    pointer-events: none;
+header .container {
+    position: relative;
+    z-index: 1;
 }
 
 header h1 {
-    font-size: 3.5rem;
+    font-size: var(--text-5xl);
     font-weight: 800;
-    margin-bottom: 0.875rem;
+    margin-bottom: var(--space-md);
     background: var(--accent-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -97,15 +112,14 @@ header h1 {
     letter-spacing: -0.03em;
     display: flex;
     align-items: center;
-    gap: 1rem;
-    position: relative;
-    z-index: 1;
+    justify-content: center;
+    gap: var(--space-lg);
     text-shadow: 0 0 30px rgba(88, 166, 255, 0.3);
 }
 
 header h1::before {
     content: '🐍';
-    font-size: 3.5rem;
+    font-size: var(--text-5xl);
     filter: drop-shadow(0 0 15px rgba(88, 166, 255, 0.5));
     animation: float 4s ease-in-out infinite;
     display: inline-block;
@@ -119,33 +133,33 @@ header h1::before {
 
 .subtitle {
     color: var(--text-secondary);
-    font-size: 1.25rem;
+    font-size: var(--text-xl);
     font-weight: 400;
     letter-spacing: 0.01em;
-    position: relative;
-    z-index: 1;
+    text-align: center;
 }
 
 nav {
-    margin-bottom: 2.5rem;
+    margin-bottom: var(--space-2xl);
 }
 
 .nav-controls {
     display: flex;
-    gap: 1.25rem;
-    align-items: center;
+    gap: var(--space-lg);
+    align-items: stretch;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 #search {
     flex: 1;
-    max-width: 500px;
-    padding: 1rem 1.5rem;
-    padding-left: 3rem;
+    padding: var(--space-md) var(--space-lg);
+    padding-left: var(--space-2xl);
     background: var(--bg-card);
     border: 2px solid var(--border);
     border-radius: 12px;
     color: var(--text-primary);
-    font-size: 1rem;
+    font-size: var(--text-base);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 12px var(--shadow-sm);
     position: relative;
@@ -154,10 +168,10 @@ nav {
 #search::before {
     content: '🔍';
     position: absolute;
-    left: 1rem;
+    left: var(--space-md);
     top: 50%;
     transform: translateY(-50%);
-    font-size: 1.1rem;
+    font-size: var(--text-lg);
     opacity: 0.6;
     pointer-events: none;
 }
@@ -176,18 +190,18 @@ nav {
 }
 
 .btn-toggle {
-    padding: 1rem 2rem;
+    padding: var(--space-md) var(--space-xl);
     background: var(--bg-card);
     border: 2px solid var(--border);
     border-radius: 12px;
     color: var(--text-primary);
     cursor: pointer;
-    font-size: 1rem;
+    font-size: var(--text-base);
     font-weight: 600;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: var(--space-sm);
     box-shadow: 0 4px 12px var(--shadow-sm);
     white-space: nowrap;
     position: relative;
@@ -220,7 +234,7 @@ nav {
 }
 
 .btn-toggle span:first-child {
-    font-size: 1.2rem;
+    font-size: var(--text-lg);
     position: relative;
     z-index: 1;
 }
@@ -231,23 +245,22 @@ nav {
 }
 
 .layout {
-    display: flex;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: var(--space-2xl);
     flex: 1;
-    margin-bottom: 2.5rem;
+    margin-bottom: var(--space-2xl);
+    align-items: start;
 }
 
 .sidebar {
-    width: 340px;
-    min-width: 300px;
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 16px;
-    padding: 2rem;
-    height: fit-content;
+    padding: var(--space-xl);
     position: sticky;
-    top: 28px;
-    max-height: calc(100vh - 240px);
+    top: var(--space-xl);
+    max-height: calc(100vh - var(--space-3xl));
     overflow-y: auto;
     box-shadow: 0 8px 32px var(--shadow-md);
     transition: all 0.3s ease;
@@ -260,20 +273,20 @@ nav {
 }
 
 .sidebar h2 {
-    font-size: 1.5rem;
+    font-size: var(--text-xl);
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--space-lg);
     color: var(--text-primary);
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    padding-bottom: 1rem;
+    gap: var(--space-sm);
+    padding-bottom: var(--space-md);
     border-bottom: 2px solid var(--border-light);
 }
 
 .sidebar h2::before {
     content: '📁';
-    font-size: 1.75rem;
+    font-size: var(--text-xl);
     filter: drop-shadow(0 0 8px rgba(88, 166, 255, 0.4));
 }
 
@@ -283,20 +296,20 @@ nav {
 
 .file-tree ul {
     list-style: none;
-    margin-left: 1rem;
+    margin-left: var(--space-md);
 }
 
 .file-item {
-    padding: 0.75rem 1rem;
+    padding: var(--space-sm) var(--space-md);
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 8px;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     word-break: break-all;
-    margin: 0.25rem 0;
+    margin: var(--space-xs) 0;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    font-size: 0.95rem;
+    gap: var(--space-sm);
+    font-size: var(--text-sm);
     position: relative;
     overflow: hidden;
 }
@@ -315,32 +328,32 @@ nav {
 
 .file-item:hover {
     background: var(--bg-card-hover);
-    transform: translateX(6px);
-    padding-left: 1.25rem;
+    transform: translateX(4px);
+    padding-left: var(--space-lg);
 }
 
 .file-item:hover::before {
-    width: 4px;
+    width: 3px;
 }
 
 .file-item.active {
     background: linear-gradient(90deg, rgba(88, 166, 255, 0.2) 0%, rgba(88, 166, 255, 0.05) 100%);
     color: var(--accent-light);
-    border-left: 4px solid var(--accent);
-    padding-left: 1rem;
+    border-left: 3px solid var(--accent);
+    padding-left: var(--space-md);
     font-weight: 600;
     box-shadow: 0 4px 12px rgba(88, 166, 255, 0.2);
 }
 
 .file-item .icon {
-    font-size: 1.2rem;
+    font-size: var(--text-base);
     flex-shrink: 0;
     transition: all 0.3s ease;
     filter: drop-shadow(0 0 4px rgba(88, 166, 255, 0.3));
 }
 
 .file-item:hover .icon {
-    transform: scale(1.15) rotate(5deg);
+    transform: scale(1.1) rotate(3deg);
 }
 
 .directory {
@@ -349,7 +362,6 @@ nav {
 }
 
 .content {
-    flex: 1;
     min-width: 0;
 }
 
@@ -357,8 +369,7 @@ nav {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 20px;
-    padding: 5rem 4rem;
-    text-align: center;
+    padding: var(--space-3xl) var(--space-2xl);
     box-shadow: 0 8px 32px var(--shadow-md);
     position: relative;
     overflow: hidden;
@@ -388,18 +399,23 @@ nav {
     pointer-events: none;
 }
 
+.welcome-header {
+    text-align: center;
+    margin-bottom: var(--space-3xl);
+}
+
 .welcome-icon {
-    font-size: 5rem;
-    margin-bottom: 1.5rem;
+    font-size: 4rem;
+    margin-bottom: var(--space-lg);
     filter: drop-shadow(0 0 20px rgba(88, 166, 255, 0.5));
     animation: float 4s ease-in-out infinite;
     display: inline-block;
 }
 
 .welcome h2 {
-    font-size: 3rem;
+    font-size: var(--text-4xl);
     font-weight: 800;
-    margin-bottom: 1.25rem;
+    margin-bottom: var(--space-md);
     background: var(--accent-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -409,23 +425,20 @@ nav {
     z-index: 1;
 }
 
-.welcome > p {
+.welcome > .welcome-header > p {
     color: var(--text-secondary);
-    margin-bottom: 4rem;
-    font-size: 1.3rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.8;
+    font-size: var(--text-lg);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
     position: relative;
     z-index: 1;
 }
 
 .features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
     position: relative;
     z-index: 1;
 }
@@ -435,11 +448,13 @@ nav {
     background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-card-hover) 100%);
     border: 2px solid var(--border);
     border-radius: 16px;
-    padding: 2.25rem;
+    padding: var(--space-xl);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 16px var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
 }
 
 .feature::before {
@@ -469,7 +484,7 @@ nav {
 }
 
 .feature:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-6px) scale(1.02);
     box-shadow: 0 12px 32px var(--shadow-lg);
     border-color: var(--accent);
     background: linear-gradient(135deg, var(--bg-card-hover) 0%, var(--bg-card) 100%);
@@ -486,23 +501,23 @@ nav {
 }
 
 .feature-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-bottom: var(--space-md);
     filter: drop-shadow(0 0 12px rgba(88, 166, 255, 0.4));
     transition: all 0.4s ease;
     display: block;
 }
 
 .feature:hover .feature-icon {
-    transform: scale(1.2) rotate(5deg);
+    transform: scale(1.15) rotate(5deg);
     filter: drop-shadow(0 0 20px rgba(88, 166, 255, 0.6));
 }
 
 .feature strong {
     display: block;
-    margin-bottom: 0.75rem;
+    margin-bottom: var(--space-sm);
     color: var(--accent-light);
-    font-size: 1.3rem;
+    font-size: var(--text-lg);
     font-weight: 700;
     position: relative;
     z-index: 1;
@@ -510,10 +525,11 @@ nav {
 
 .feature p {
     color: var(--text-secondary);
-    line-height: 1.7;
-    font-size: 1rem;
+    line-height: 1.6;
+    font-size: var(--text-sm);
     position: relative;
     z-index: 1;
+    flex: 1;
 }
 
 .code-viewer {
@@ -539,7 +555,7 @@ nav {
 
 .code-header {
     background: linear-gradient(90deg, var(--bg-tertiary) 0%, var(--bg-card) 100%);
-    padding: 1.5rem 2rem;
+    padding: var(--space-lg) var(--space-xl);
     border-bottom: 2px solid var(--border-light);
     display: flex;
     justify-content: space-between;
@@ -547,41 +563,41 @@ nav {
 }
 
 .code-header h3 {
-    font-size: 1.25rem;
+    font-size: var(--text-lg);
     font-weight: 700;
     word-break: break-all;
     flex: 1;
-    margin-right: 1.5rem;
+    margin-right: var(--space-lg);
     color: var(--text-primary);
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: var(--space-sm);
 }
 
 .code-header h3::before {
     content: '📄';
-    font-size: 1.5rem;
+    font-size: var(--text-xl);
     filter: drop-shadow(0 0 8px rgba(88, 166, 255, 0.4));
 }
 
 .code-actions {
     display: flex;
-    gap: 1rem;
+    gap: var(--space-md);
 }
 
 .btn {
-    padding: 0.75rem 1.5rem;
+    padding: var(--space-sm) var(--space-lg);
     background: var(--bg-card);
     border: 2px solid var(--border);
     border-radius: 10px;
     color: var(--text-primary);
     cursor: pointer;
-    font-size: 0.95rem;
+    font-size: var(--text-sm);
     font-weight: 600;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: var(--space-sm);
     box-shadow: 0 4px 12px var(--shadow-sm);
 }
 
@@ -623,35 +639,35 @@ nav {
 
 pre {
     margin: 0;
-    padding: 2.5rem;
+    padding: var(--space-xl);
     overflow-x: auto;
     background: var(--bg-primary);
 }
 
 code {
     font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
-    font-size: 0.95rem;
+    font-size: var(--text-sm);
     line-height: 1.8;
 }
 
 .loading, .error {
-    padding: 4rem 2rem;
+    padding: var(--space-3xl) var(--space-xl);
     text-align: center;
     color: var(--text-secondary);
-    font-size: 1.1rem;
+    font-size: var(--text-base);
 }
 
 .loading {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: var(--space-md);
     flex-direction: column;
 }
 
 .loading::before {
     content: '⏳';
-    font-size: 2rem;
+    font-size: var(--text-2xl);
     animation: spin 1.5s linear infinite;
     filter: drop-shadow(0 0 8px rgba(88, 166, 255, 0.4));
 }
@@ -666,12 +682,12 @@ code {
     background: rgba(248, 81, 73, 0.1);
     border: 2px solid rgba(248, 81, 73, 0.3);
     border-radius: 12px;
-    padding: 2rem;
+    padding: var(--space-xl);
 }
 
 footer {
     margin-top: auto;
-    padding: 3rem 0;
+    padding: var(--space-2xl) 0;
     border-top: 1px solid var(--border-light);
     text-align: center;
     color: var(--text-secondary);
@@ -683,7 +699,7 @@ footer a {
     text-decoration: none;
     transition: all 0.3s ease;
     font-weight: 600;
-    padding: 0.5rem 1rem;
+    padding: var(--space-xs) var(--space-md);
     border-radius: 8px;
     position: relative;
 }
@@ -692,8 +708,8 @@ footer a::after {
     content: '';
     position: absolute;
     bottom: 0.25rem;
-    left: 1rem;
-    right: 1rem;
+    left: var(--space-md);
+    right: var(--space-md);
     height: 2px;
     background: var(--accent-gradient);
     transform: scaleX(0);
@@ -710,13 +726,25 @@ footer a:hover::after {
     transform: scaleX(1);
 }
 
+@media (max-width: 1024px) {
+    .layout {
+        grid-template-columns: 280px 1fr;
+        gap: var(--space-xl);
+    }
+    
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .container {
-        padding: 0 20px;
+        padding: 0 var(--space-lg);
     }
 
     .layout {
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
     }
 
     .sidebar {
@@ -726,11 +754,11 @@ footer a:hover::after {
     }
 
     header h1 {
-        font-size: 2.5rem;
+        font-size: var(--text-4xl);
     }
 
     header h1::before {
-        font-size: 2.5rem;
+        font-size: var(--text-4xl);
     }
 
     .nav-controls {
@@ -738,21 +766,24 @@ footer a:hover::after {
     }
 
     #search {
-        max-width: 100%;
         width: 100%;
     }
 
     .features {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: var(--space-md);
     }
 
     .welcome {
-        padding: 3rem 2rem;
+        padding: var(--space-2xl) var(--space-lg);
     }
 
     .welcome h2 {
-        font-size: 2.25rem;
+        font-size: var(--text-3xl);
+    }
+    
+    .welcome-header {
+        margin-bottom: var(--space-2xl);
     }
 }
 
@@ -783,14 +814,14 @@ footer a:hover::after {
 
 /* Tree view styling */
 .tree-view .file-item {
-    padding-left: 1.75rem;
+    padding-left: var(--space-xl);
     position: relative;
 }
 
 .tree-view .file-item::before {
     content: '';
     position: absolute;
-    left: 0.75rem;
+    left: var(--space-sm);
     top: 50%;
     transform: translateY(-50%);
     width: 0;
@@ -812,8 +843,8 @@ footer a:hover::after {
 /* Flat view styling */
 .flat-view .file-item {
     display: inline-block;
-    margin: 0.5rem;
-    padding: 0.75rem 1.5rem;
+    margin: var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
     background: var(--bg-card-hover);
     border-radius: 10px;
     border: 2px solid var(--border);
