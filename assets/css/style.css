@@ -53,70 +53,59 @@ body {
     width: 100%;
 }
 
-header {
-    background: linear-gradient(180deg, rgba(20, 27, 35, 0.95) 0%, rgba(10, 14, 19, 0.98) 100%);
-    backdrop-filter: blur(20px);
+/* Header */
+.site-header {
     border-bottom: 1px solid var(--border-light);
-    padding: 3rem 0 2rem;
-    margin-bottom: 2rem;
-    position: relative;
+    background: linear-gradient(180deg, rgba(16, 24, 35, 0.9), rgba(16, 24, 35, 0.8));
+    padding: 1.25rem 0 0.75rem;
+    margin-bottom: 1.5rem;
 }
 
-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--accent-gradient);
-    opacity: 0.6;
-}
-
-header h1 {
-    font-size: 2.75rem;
-    font-weight: 800;
-    margin-bottom: 0.75rem;
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    letter-spacing: -0.02em;
+.header-inner {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 0.875rem;
+    justify-content: space-between;
 }
 
-header h1::before {
-    content: '🐍';
-    font-size: 2.75rem;
-    filter: drop-shadow(0 0 10px rgba(88, 166, 255, 0.4));
-    animation: float 4s ease-in-out infinite;
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-6px); }
+.brand h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.brand-mark {
+    font-size: 1.3rem;
+}
+
+.header-links a {
+    color: var(--text-secondary);
+    margin-left: 1rem;
+    text-decoration: none;
+}
+
+.header-links a:hover {
+    color: var(--accent-light);
 }
 
 .subtitle {
-    color: var(--text-secondary);
-    font-size: 1.125rem;
-    font-weight: 400;
     text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    padding-top: 0.5rem;
 }
 
-nav {
-    margin-bottom: 2rem;
-}
-
-.nav-controls {
+/* Toolbar */
+.toolbar {
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 1rem;
-    align-items: center;
-    width: 100%;
+    margin-bottom: 1.5rem;
 }
 
 #search {
@@ -273,83 +262,29 @@ nav {
     margin: 0 auto;
 }
 
-.welcome {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 2.5rem;
-    box-shadow: 0 4px 16px var(--shadow-sm);
-}
 
-.welcome-header {
-    text-align: center;
-    margin-bottom: 2.5rem;
-}
+.card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 4px 16px var(--shadow-sm); }
+.welcome { padding: 2.25rem; }
 
-.welcome-icon {
-    font-size: 3.5rem;
-    margin-bottom: 1.25rem;
-    filter: drop-shadow(0 0 12px rgba(88, 166, 255, 0.4));
-    animation: float 4s ease-in-out infinite;
-    display: inline-block;
-}
+/* welcome-header removed in new design */
 
 .welcome h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
     color: var(--text-primary);
     letter-spacing: -0.01em;
 }
 
-.welcome-header > p {
+.welcome > p {
     color: var(--text-secondary);
-    font-size: 1.0625rem;
-    max-width: 650px;
+    font-size: 1rem;
+    max-width: 700px;
     margin: 0 auto;
     line-height: 1.7;
 }
 
-.features {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-}
-
-.feature {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.5rem;
-    transition: all 0.2s ease;
-    position: relative;
-}
-
-.feature:hover {
-    border-color: var(--accent);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px var(--shadow-md);
-}
-
-.feature-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    display: block;
-}
-
-.feature strong {
-    display: block;
-    margin-bottom: 0.625rem;
-    color: var(--accent-light);
-    font-size: 1.0625rem;
-    font-weight: 600;
-}
-
-.feature p {
-    color: var(--text-secondary);
-    line-height: 1.6;
-    font-size: 0.9375rem;
-}
+/* (features removed in the new design) */
 
 .code-viewer {
     background: var(--bg-card);
@@ -565,18 +500,11 @@ footer a:hover {
         width: 100%;
     }
 
-    .features {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
     .welcome {
         padding: 2rem;
     }
 
-    .welcome-header {
-        margin-bottom: 2rem;
-    }
+    /* welcome-header removed */
 
     .welcome h2 {
         font-size: 1.75rem;

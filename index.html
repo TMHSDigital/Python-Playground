@@ -8,19 +8,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Python Playground</h1>
-            <p class="subtitle">Educational Python code examples and snippets</p>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">
+                <span class="brand-mark">🐍</span>
+                <h1>Python Playground</h1>
+            </div>
+            <nav class="header-links">
+                <a href="https://github.com/TMHSDigital/Python-Playground" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://github.com/TMHSDigital/Python-Playground/blob/main/README.md" target="_blank" rel="noopener">Docs</a>
+            </nav>
         </div>
+        <p class="subtitle">Educational Python code examples and snippets</p>
     </header>
 
-    <nav class="container">
-        <div class="nav-controls">
-            <input type="search" id="search" placeholder="Search files..." aria-label="Search files">
-            <button id="toggle-view" class="btn-toggle" aria-label="Toggle view"><span>📁</span> <span>Tree</span></button>
-        </div>
-    </nav>
+    <div class="container toolbar">
+        <input type="search" id="search" placeholder="Search files..." aria-label="Search files">
+        <button id="toggle-view" class="btn-toggle" aria-label="Toggle view"><span>📁</span> <span>Tree</span></button>
+    </div>
 
     <main class="container">
         <div class="layout">
@@ -32,44 +37,9 @@
             </aside>
 
             <section id="content" class="content">
-                <div class="welcome">
-                    <div class="welcome-header">
-                        <div class="welcome-icon">🐍</div>
-                        <h2>Welcome</h2>
-                        <p>Explore Python code examples, browse snippets, and copy code with ease. Select a file from the sidebar to get started.</p>
-                    </div>
-                    <div class="features">
-                        <div class="feature">
-                            <div class="feature-icon">📋</div>
-                            <strong>One-Click Copy</strong>
-                            <p>Copy any code snippet to your clipboard instantly with a single click</p>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-icon">🔍</div>
-                            <strong>Smart Search</strong>
-                            <p>Quickly find files by name or path with real-time filtering</p>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-icon">📱</div>
-                            <strong>Fully Responsive</strong>
-                            <p>Beautiful experience on desktop, tablet, and mobile devices</p>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-icon">🎨</div>
-                            <strong>Syntax Highlighting</strong>
-                            <p>Code is beautifully highlighted for better readability</p>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-icon">🌳</div>
-                            <strong>Multiple Views</strong>
-                            <p>Switch between tree and flat views for better navigation</p>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-icon">⚡</div>
-                            <strong>Fast & Lightweight</strong>
-                            <p>Optimized performance with instant file loading</p>
-                        </div>
-                    </div>
+                <div id="welcome" class="welcome card">
+                    <h2>Welcome</h2>
+                    <p>Browse Python files from this repository. Select a file on the left to view the code and copy snippets.</p>
                 </div>
             </section>
         </div>
