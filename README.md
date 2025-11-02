@@ -25,12 +25,20 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Version">
   <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=for-the-badge" alt="License">
+  <img src="https://img.shields.io/badge/GitHub%20Pages-Deployed-brightgreen?style=for-the-badge&logo=github" alt="GitHub Pages">
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/github/actions/workflow/status/TMHSDigital/Python-Playground/ci.yml?branch=main&label=CI&style=for-the-badge" alt="CI Status">
+  <img src="https://img.shields.io/github/actions/workflow/status/TMHSDigital/Python-Playground/pages.yml?branch=main&label=Pages&style=for-the-badge" alt="Pages Status">
   <img src="https://img.shields.io/github/last-commit/TMHSDigital/Python-Playground?style=for-the-badge" alt="Last Commit">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/github/stars/TMHSDigital/Python-Playground?style=for-the-badge&logo=github" alt="Stars">
+  <img src="https://img.shields.io/github/forks/TMHSDigital/Python-Playground?style=for-the-badge&logo=github" alt="Forks">
   <img src="https://img.shields.io/github/issues/TMHSDigital/Python-Playground?style=for-the-badge" alt="Issues">
+  <img src="https://img.shields.io/github/contributors/TMHSDigital/Python-Playground?style=for-the-badge" alt="Contributors">
 </p>
 
 <p align="center">
@@ -100,6 +108,18 @@ Python Playground is an educational repository designed to help developers learn
 - Architecture documentation
 - Contributing guidelines
 - Release notes and changelog
+- Interactive GitHub Pages site for browsing code
+
+</details>
+
+<details>
+<summary><strong>GitHub Pages Site</strong></summary>
+
+- 🌐 [Live interactive code browser](https://tmhsdigital.github.io/Python-Playground/)
+- 📋 One-click code copying
+- 🔍 File search and navigation
+- 📱 Mobile-responsive design
+- 🎨 Syntax highlighting
 
 </details>
 
@@ -136,6 +156,10 @@ Examples will be available in the repository as they are added. Each example inc
 - Source code with comments
 - Tests demonstrating usage
 - Documentation explaining concepts
+
+### Viewing Code Online
+
+Visit the [GitHub Pages site](https://tmhsdigital.github.io/Python-Playground/) to browse and copy code snippets directly in your browser. The site automatically discovers all Python files in the repository and provides an interactive interface for exploring the codebase.
 
 ## Project Structure
 
