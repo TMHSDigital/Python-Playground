@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Playground - Code Examples</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🐍 Python Playground</h1>
+            <p class="subtitle">Educational Python code examples and snippets</p>
+        </div>
+    </header>
+
+    <nav class="container">
+        <div class="nav-controls">
+            <input type="search" id="search" placeholder="Search files..." aria-label="Search files">
+            <button id="toggle-view" class="btn-toggle" aria-label="Toggle view">📁 Tree</button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="layout">
+            <aside id="sidebar" class="sidebar">
+                <h2>Files</h2>
+                <div id="file-tree" class="file-tree">
+                    <div class="loading">Loading files...</div>
+                </div>
+            </aside>
+
+            <section id="content" class="content">
+                <div class="welcome">
+                    <h2>Welcome to Python Playground</h2>
+                    <p>Select a file from the sidebar to view its code, or use the search to find specific files.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <strong>📋 Easy Copy</strong>
+                            <p>Click the copy button on any code block to copy it instantly</p>
+                        </div>
+                        <div class="feature">
+                            <strong>🔍 Search</strong>
+                            <p>Search files by name or path</p>
+                        </div>
+                        <div class="feature">
+                            <strong>📱 Responsive</strong>
+                            <p>Works great on desktop and mobile devices</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                <a href="https://github.com/TMHSDigital/Python-Playground">View on GitHub</a> •
+                <a href="https://github.com/TMHSDigital/Python-Playground/blob/main/README.md">Documentation</a> •
+                <a href="https://github.com/TMHSDigital/Python-Playground/blob/main/LICENSE">License</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
+

@@ -38,6 +38,7 @@
 </p>
 
 <p align="center">
+  <a href="https://tmhsdigital.github.io/Python-Playground/">🌐 View Site</a> •
   <a href="https://github.com/TMHSDigital/Python-Playground">View Source</a> •
   <a href="https://github.com/TMHSDigital/Python-Playground/issues">Report Issue</a> •
   <a href="https://github.com/TMHSDigital/Python-Playground/blob/main/docs/ROADMAP.md">Roadmap</a> •
@@ -156,6 +157,8 @@ Python-Playground/
 
 ## Documentation
 
+- **[🌐 Interactive Code Browser](https://tmhsdigital.github.io/Python-Playground/)**: Browse and copy code snippets online
+- **[GitHub Pages Setup](docs/GITHUB_PAGES.md)**: Instructions for setting up and deploying the site
 - **[Architecture](docs/ARCHITECTURE.md)**: Project structure and design principles
 - **[Roadmap](docs/ROADMAP.md)**: Planned features and future enhancements
 - **[Release Process](docs/RELEASE.md)**: Versioning and release workflow
