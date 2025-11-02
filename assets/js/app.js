@@ -29,7 +29,14 @@ function initializeViewToggle() {
     const sidebar = document.getElementById('sidebar');
     toggleBtn.addEventListener('click', () => {
         viewMode = viewMode === 'tree' ? 'flat' : 'tree';
-        toggleBtn.textContent = viewMode === 'tree' ? '📁 Tree' : '📄 Flat';
+        const icon = toggleBtn.querySelector('span:first-child');
+        const text = toggleBtn.querySelector('span:last-child');
+        if (icon && text) {
+            icon.textContent = viewMode === 'tree' ? '📁' : '📄';
+            text.textContent = viewMode === 'tree' ? 'Tree' : 'Flat';
+        } else {
+            toggleBtn.textContent = viewMode === 'tree' ? '📁 Tree' : '📄 Flat';
+        }
         sidebar.className = `sidebar ${viewMode}-view`;
         renderFileTree();
     });
