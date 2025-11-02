@@ -1,0 +1,18 @@
+# Default owner for all files
+* @TMHSDigital
+
+# Documentation
+/docs/ @TMHSDigital
+*.md @TMHSDigital
+
+# GitHub workflows
+/.github/ @TMHSDigital
+
+# Python code
+*.py @TMHSDigital
+
+# Configuration files
+pyproject.toml @TMHSDigital
+.editorconfig @TMHSDigital
+.prettierrc @TMHSDigital
+

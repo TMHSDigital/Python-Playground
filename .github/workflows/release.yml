@@ -1,0 +1,62 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract version from tag
+        id: tag_version
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/}
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Extracted version: $VERSION"
+
+      - name: Check for release notes
+        id: release_notes
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/}
+          RELEASE_NOTES_FILE="releases/RELEASE_NOTES_${VERSION}.md"
+          
+          if [ -f "$RELEASE_NOTES_FILE" ]; then
+            echo "found=true" >> $GITHUB_OUTPUT
+            echo "notes_file=$RELEASE_NOTES_FILE" >> $GITHUB_OUTPUT
+          else
+            echo "found=false" >> $GITHUB_OUTPUT
+            echo "notes_file=CHANGELOG.md" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Read release notes
+        id: notes_content
+        run: |
+          if [ "${{ steps.release_notes.outputs.found }}" == "true" ]; then
+            NOTES=$(cat "${{ steps.release_notes.outputs.notes_file }}")
+          else
+            NOTES=$(cat CHANGELOG.md | sed -n "/## \[${{ steps.tag_version.outputs.version }}\]/,/## \[/p" | sed '$d')
+          fi
+          echo "notes<<EOF" >> $GITHUB_OUTPUT
+          echo "$NOTES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.tag_version.outputs.version }}
+          name: Release ${{ steps.tag_version.outputs.version }}
+          body: ${{ steps.notes_content.outputs.notes }}
+          draft: false
+          prerelease: false
+
