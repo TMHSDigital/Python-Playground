@@ -29,7 +29,10 @@
             <span class="search-icon" aria-hidden="true">&#128269;</span>
             <input type="search" id="search" placeholder="Search files..." aria-label="Search files">
         </div>
-        <button id="toggle-view" class="btn-toggle" aria-label="Toggle view"><span>📁</span> <span>Tree</span></button>
+        <div class="toolbar-actions">
+            <button id="toggle-view" class="btn-toggle" aria-label="Toggle view"><span>📁</span> <span>Tree</span></button>
+            <button id="btn-home" class="btn-toggle" aria-label="Home" title="Back to overview"><span>🏠</span> <span>Home</span></button>
+        </div>
     </div>
 
     <main class="container">
@@ -43,8 +46,61 @@
 
             <section id="content" class="content">
                 <div id="welcome" class="welcome card">
-                    <h2>Welcome</h2>
-                    <p>Browse Python files from this repository. Select a file on the left to view the code and copy snippets.</p>
+                    <div class="welcome-hero">
+                        <h2>Learn Python by Example</h2>
+                        <p>Explore well-documented code covering fundamentals through advanced topics. Pick a category below or browse the file tree.</p>
+                    </div>
+
+                    <div class="category-grid">
+                        <button class="category-card" data-category="basics">
+                            <span class="category-icon">📘</span>
+                            <div class="category-info">
+                                <h3>Basics</h3>
+                                <p>Variables, control flow, functions, strings, comprehensions</p>
+                            </div>
+                            <span class="category-arrow">→</span>
+                        </button>
+
+                        <button class="category-card" data-category="data_structures">
+                            <span class="category-icon">🗂️</span>
+                            <div class="category-info">
+                                <h3>Data Structures</h3>
+                                <p>Collections, dataclasses, stacks, queues, linked lists, BSTs</p>
+                            </div>
+                            <span class="category-arrow">→</span>
+                        </button>
+
+                        <button class="category-card" data-category="algorithms">
+                            <span class="category-icon">⚡</span>
+                            <div class="category-info">
+                                <h3>Algorithms</h3>
+                                <p>Sorting, searching, graph traversal, recursion, dynamic programming</p>
+                            </div>
+                            <span class="category-arrow">→</span>
+                        </button>
+
+                        <button class="category-card" data-category="patterns">
+                            <span class="category-icon">🏗️</span>
+                            <div class="category-info">
+                                <h3>Design Patterns</h3>
+                                <p>Creational, behavioral, and structural patterns in Python</p>
+                            </div>
+                            <span class="category-arrow">→</span>
+                        </button>
+
+                        <button class="category-card" data-category="advanced">
+                            <span class="category-icon">🚀</span>
+                            <div class="category-info">
+                                <h3>Advanced</h3>
+                                <p>Generators, decorators, context managers, async programming</p>
+                            </div>
+                            <span class="category-arrow">→</span>
+                        </button>
+                    </div>
+
+                    <div class="welcome-hint">
+                        <span>💡</span> New to Python? Start with <a href="#" id="start-link" data-file="examples/basics/variables_and_types.py">Variables &amp; Types</a>
+                    </div>
                 </div>
             </section>
         </div>
