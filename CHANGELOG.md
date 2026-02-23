@@ -7,23 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-02-22
+
 ### Added
 - Initial repository scaffold with GitHub infrastructure
-- CI/CD workflows for testing and releases
-- Documentation structure and templates
-- Python project configuration
-
-### Changed
-
-### Fixed
-
-### Removed
-
-## [0.1.0] - TBD
-
-### Added
-- Initial repository setup
-- GitHub Actions workflows
-- Issue and PR templates
-- Documentation framework
-
+- CI/CD workflows for testing, GitHub Pages deployment, and releases
+- Documentation structure and templates (architecture, roadmap, release process)
+- Python project configuration with ruff, black, mypy, and pytest
+- Educational example modules:
+  - `examples/basics/` - Variables, control flow, functions, strings, comprehensions
+  - `examples/data_structures/` - Collections, dataclasses, custom structures (stack, queue, linked list, BST)
+  - `examples/algorithms/` - Sorting, searching, recursion and dynamic programming
+  - `examples/patterns/` - Creational, behavioral, and structural design patterns
+  - `examples/advanced/` - Generators, decorators, context managers, async programming
+- Unit tests covering all example modules (142 tests)
+- Interactive GitHub Pages site for browsing and copying code snippets
+- Dependabot configuration for automated dependency updates

@@ -43,7 +43,7 @@ The release workflow will extract notes from `CHANGELOG.md` if no release notes 
 
 Format in CHANGELOG.md:
 ```markdown
-## [1.0.0] - 2024-01-15
+## [1.0.0] - YYYY-MM-DD
 
 ### Added
 - Feature 1

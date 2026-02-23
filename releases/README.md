@@ -34,7 +34,7 @@ Example structure:
 ```markdown
 # Release Notes v1.0.0
 
-**Release Date**: 2024-01-15
+**Release Date**: YYYY-MM-DD
 
 ## Summary
 

@@ -11,23 +11,26 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: ${{ matrix.python-version }}
 
       - name: Cache pip dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/pyproject.toml') }}
+          key: ${{ runner.os }}-pip-${{ matrix.python-version }}-${{ hashFiles('**/pyproject.toml') }}
           restore-keys: |
-            ${{ runner.os }}-pip-
+            ${{ runner.os }}-pip-${{ matrix.python-version }}-
 
       - name: Install dependencies
         run: |
@@ -35,18 +38,13 @@ jobs:
           pip install -e ".[dev]"
 
       - name: Run linter
-        run: |
-          ruff check . || true
+        run: ruff check .
 
       - name: Run formatter check
-        run: |
-          black --check . || true
+        run: black --check .
 
       - name: Run type checker
-        run: |
-          mypy . || true
+        run: mypy examples/
 
       - name: Run tests
-        run: |
-          pytest || true
-
+        run: pytest --cov --cov-report=term-missing

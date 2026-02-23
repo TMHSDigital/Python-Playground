@@ -108,6 +108,21 @@ body {
     margin-bottom: 1.5rem;
 }
 
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 0.875rem;
+    font-size: 1rem;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 1;
+}
+
 #search {
     flex: 1;
     width: 100%;
@@ -119,18 +134,6 @@ body {
     color: var(--text-primary);
     font-size: 0.95rem;
     transition: all 0.2s ease;
-    position: relative;
-}
-
-#search::before {
-    content: '🔍';
-    position: absolute;
-    left: 0.875rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1rem;
-    opacity: 0.5;
-    pointer-events: none;
 }
 
 #search::placeholder {
@@ -450,11 +453,6 @@ footer a:hover {
         grid-template-columns: 300px 1fr;
         gap: 1.75rem;
     }
-    
-    .features {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
 }
 
 @media (max-width: 768px) {
@@ -484,15 +482,6 @@ footer a:hover {
 
     header h1::before {
         font-size: 2.25rem;
-    }
-
-    nav {
-        margin-bottom: 1.5rem;
-    }
-
-    .nav-controls {
-        flex-direction: column;
-        gap: 0.875rem;
     }
 
     #search {

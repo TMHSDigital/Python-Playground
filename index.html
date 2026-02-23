@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Python Playground - Browse educational Python code examples covering basics, data structures, algorithms, design patterns, and advanced topics.">
     <title>Python Playground - Code Examples</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐍</text></svg>">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
 </head>
@@ -23,7 +25,10 @@
     </header>
 
     <div class="container toolbar">
-        <input type="search" id="search" placeholder="Search files..." aria-label="Search files">
+        <div class="search-wrapper">
+            <span class="search-icon" aria-hidden="true">&#128269;</span>
+            <input type="search" id="search" placeholder="Search files..." aria-label="Search files">
+        </div>
         <button id="toggle-view" class="btn-toggle" aria-label="Toggle view"><span>📁</span> <span>Tree</span></button>
     </div>
 
@@ -48,8 +53,8 @@
     <footer>
         <div class="container">
             <p>
-                <a href="https://github.com/TMHSDigital/Python-Playground">View on GitHub</a> •
-                <a href="https://github.com/TMHSDigital/Python-Playground/blob/main/README.md">Documentation</a> •
+                <a href="https://github.com/TMHSDigital/Python-Playground">View on GitHub</a> &bull;
+                <a href="https://github.com/TMHSDigital/Python-Playground/blob/main/README.md">Documentation</a> &bull;
                 <a href="https://github.com/TMHSDigital/Python-Playground/blob/main/LICENSE">License</a>
             </p>
         </div>
@@ -60,4 +65,3 @@
     <script src="assets/js/app.js"></script>
 </body>
 </html>
-

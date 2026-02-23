@@ -78,7 +78,7 @@ pytest
 pytest --cov
 
 # Run specific test file
-pytest tests/unit/test_example.py
+pytest tests/unit/test_basics.py
 ```
 
 ### Writing Tests
@@ -112,6 +112,16 @@ Use clear, descriptive commit messages:
 - **Format**: `Type: Brief description`
 - **Types**: `Add`, `Fix`, `Update`, `Remove`, `Refactor`, `Docs`, `Test`
 - **Example**: `Add: Fibonacci sequence example with tests`
+
+## Running Examples
+
+Each example module can be run standalone:
+
+```bash
+python -m examples.basics.variables_and_types
+python -m examples.algorithms.sorting
+python -m examples.advanced.async_programming
+```
 
 ## Documentation
 

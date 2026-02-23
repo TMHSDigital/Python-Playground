@@ -86,8 +86,8 @@ Python Playground is an educational repository designed to help developers learn
 
 - Data structures and algorithms
 - Design patterns in Python
-- Standard library usage
-- Third-party library integration
+- Standard library deep dives
+- Async programming and concurrency
 
 </details>
 
@@ -152,10 +152,17 @@ pip install -e ".[dev]"
 
 ### Running Examples
 
-Examples will be available in the repository as they are added. Each example includes:
-- Source code with comments
-- Tests demonstrating usage
-- Documentation explaining concepts
+Each example module is self-contained and can be run directly:
+
+```bash
+# Run any example module
+python -m examples.basics.variables_and_types
+python -m examples.algorithms.sorting
+python -m examples.patterns.creational
+python -m examples.advanced.async_programming
+```
+
+Every module includes a `if __name__ == "__main__"` block with demo output.
 
 ### Viewing Code Online
 
@@ -165,18 +172,25 @@ Visit the [GitHub Pages site](https://tmhsdigital.github.io/Python-Playground/) 
 
 ```
 Python-Playground/
-├── .github/              # GitHub workflows and templates
-│   ├── workflows/        # CI/CD workflows
-│   └── ISSUE_TEMPLATE/   # Issue templates
-├── docs/                 # Documentation
-│   ├── ARCHITECTURE.md   # Architecture documentation
-│   ├── ROADMAP.md        # Project roadmap
-│   └── RELEASE.md        # Release process
-├── releases/             # Release notes
-├── tests/                # Test suites
-│   ├── unit/             # Unit tests
-│   └── integration/      # Integration tests
-└── [source code]         # Python code examples
+├── examples/                 # Python example modules
+│   ├── basics/               # Variables, control flow, functions, strings, comprehensions
+│   ├── data_structures/      # Collections, dataclasses, custom structures
+│   ├── algorithms/           # Sorting, searching, recursion
+│   ├── patterns/             # Creational, behavioral, structural design patterns
+│   └── advanced/             # Generators, decorators, context managers, async
+├── tests/                    # Test suites (142 tests)
+│   ├── unit/                 # Unit tests for all example modules
+│   └── integration/          # Integration tests
+├── assets/                   # GitHub Pages site (CSS, JS)
+├── docs/                     # Documentation
+│   ├── ARCHITECTURE.md       # Architecture and design principles
+│   ├── ROADMAP.md            # Project roadmap
+│   ├── RELEASE.md            # Release process
+│   └── GITHUB_PAGES.md       # GitHub Pages setup guide
+├── .github/                  # Workflows, templates, and community docs
+├── index.html                # GitHub Pages entry point
+├── pyproject.toml             # Project config and tool settings
+└── conftest.py               # Pytest configuration
 ```
 
 ## Documentation
@@ -214,6 +228,9 @@ black .
 
 # Run tests
 pytest
+
+# Run tests with coverage
+pytest --cov --cov-report=term-missing
 ```
 
 ## License

@@ -16,9 +16,7 @@ This repository includes a GitHub Pages site for browsing and copying Python cod
 
 1. Go to your repository settings
 2. Navigate to **Pages** in the left sidebar
-3. Under **Source**, select:
-   - **GitHub Actions** (recommended - uses the workflow)
-   - OR **Deploy from a branch** → select `main` branch → `/ (root)`
+3. Under **Source**, select **GitHub Actions** (the included workflow handles deployment automatically)
 
 ### 2. Verify Deployment
 
@@ -77,5 +75,5 @@ npx serve .
 # Then open http://localhost:8000
 ```
 
-Note: GitHub API CORS restrictions may prevent some features from working locally. The site works best when deployed to GitHub Pages.
+Note: The GitHub API allows CORS from any origin for public repos, so the site should work locally. If you see rate limit errors, consider adding a GitHub token in `app.js`.
 
